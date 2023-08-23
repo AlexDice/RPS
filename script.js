@@ -4,6 +4,8 @@ function getRandomNum(){
     return Math.floor(Math.random()*3);
 }
 
+for (let i = 0; i<5; i++){
+
 /*Computer choice of RPS */
 function getComputerChoice (){
     let compList = ["rock","paper","scissors"]
@@ -52,3 +54,4 @@ function gameRounds(playerSelection , computerSelection){
 
 }
 gameRounds(playerSelection, computerSelection)
+}
