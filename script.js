@@ -6,7 +6,7 @@ function getRandomNum(){
 
 /*Computer choice of RPS */
 function getComputerChoice (){
-    let compList = ["rock","paper","scisscors"]
+    let compList = ["rock","paper","scissors"]
     return compList[getRandomNum()]
 }
 
@@ -22,22 +22,33 @@ function getPlayerSelection (){
     if ("rock"===playerChoice || "paper"===playerChoice || "scissors"===playerChoice){
     return playerChoice
     } else{
-        window.alert("You can only choose: Rock , Paper or Scisscors")
+        window.alert("You can only choose: Rock , Paper or Scissors")
     }
 }
 
-const PlayerSelection = getPlayerSelection ()
+const playerSelection = getPlayerSelection ()
 const computerSelection = getComputerChoice()
-console.log (PlayerSelection)
-console.log (computerSelection)
 
-function gameRounds(playerSelection, computerSelection){
-    if(null===playerSelection || undefined === playerSelection || ""===playerChoice){
-        return
+function gameRounds(playerSelection , computerSelection){
+    console.log (playerSelection)
+    console.log (computerSelection)    
+    if (playerSelection === computerSelection){
+        return window.alert("It's a tie")
+    } else if (
+        playerSelection ==="scissors" && computerSelection==="rock" ||
+        playerSelection ==="rock" && computerSelection==="paper" ||
+        playerSelection ==="paper" && computerSelection==="scissors"
+        ){
+            return window.alert("You loose")
+        } else if (
+            playerSelection ==="scissors" && computerSelection==="paper" ||
+            playerSelection ==="rock" && computerSelection==="scissors" ||
+            playerSelection ==="paper" && computerSelection==="rock"
+        ){
+           return window.alert("You win")
     }
-
     
 
 
 }
-
+gameRounds(playerSelection, computerSelection)
